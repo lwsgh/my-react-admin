@@ -10,6 +10,9 @@ module.exports = {
     'prettier.config.js',
     'commitlint.config.cjs',
     'lint-staged.config.js',
+    'stylelint.config.cjs',
+    'postcss.config.cjs',
+    'tailwind.config.cjs',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

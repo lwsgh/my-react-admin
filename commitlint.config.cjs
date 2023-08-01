@@ -13,10 +13,7 @@ const packages = fs
   .filter((dirent) => dirent.isDirectory())
   .map((dirent) => dirent.name.replace(/s$/, ''));
 
-const gitStatus = execSync('git status --porcelain || true')
-  .toString()
-  .trim()
-  .split('\n');
+const gitStatus = execSync('git status --porcelain || true').toString().trim().split('\n');
 
 const scopeComplete = gitStatus
   // eslint-disable-next-line no-bitwise
@@ -32,10 +29,7 @@ const subjectComplete = gitStatus
   ?.match(/src%%((\w|-)*)/)?.[1];
 
 // @tip: git branch name = feature/issue_33   =>    auto get defaultIssues = #33
-const issue = execSync('git rev-parse --abbrev-ref HEAD')
-  .toString()
-  .trim()
-  .split('_')[1];
+const issue = execSync('git rev-parse --abbrev-ref HEAD').toString().trim().split('_')[1];
 
 module.exports = {
   ignores: [(commit) => commit.includes('init')],

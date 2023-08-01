@@ -2,7 +2,7 @@ export default {
   plugins: [
     'prettier-plugin-packagejson',
     '@trivago/prettier-plugin-sort-imports',
-    // "prettier-plugin-tailwindcss", // make sure at last
+    'prettier-plugin-tailwindcss', // make sure at last
   ],
 
   //
@@ -31,7 +31,7 @@ export default {
   //
   // Plugin: @trivago/prettier-plugin-tailwindcss
   //
-  // tailwindConfig: "./tailwind.config.cjs",
+  tailwindConfig: './tailwind.config.cjs',
 
   //
   // Perttier Rules
