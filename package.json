@@ -1,12 +1,41 @@
 {
   "name": "my-react-admin",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
+  "keywords": [
+    "React",
+    "Typescript",
+    "Vite"
+  ],
+  "homepage": "https://gitee.com/liwei/my-react-admin",
   "license": "MIT",
   "author": {
     "name": "Li.Wei",
     "email": "liwei.crazy@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "clean": "npm-run-all -c -l clean:**",
+    "clean:cache": "rimraf node_modules/.cache",
+    "clean:lib": "rimraf node_modules",
+    "clean:vite": "rimraf node_modules/.vite",
+    "commit": "czg",
+    "cz": "czg",
+    "dev": "vite",
+    "preinstall": "npx only-allow pnpm",
+    "lint:commit": "commitlint --edit",
+    "lint:eslint": "eslint --fix --format=pretty ./src/**/*.{js,jsx,ts,tsx}",
+    "lint:format": "prettier --write --ignore-unknown --log-level=warn ./src/**/*.{js,jsx,ts,tsx,css,less,postcss,scss,less,json,md}",
+    "lint:style": "stylelint --fix --allow-empty-input ./src/**/*.{css,less,postcss,scss}",
+    "lint:ts": "tsc --noEmit",
+    "prepare": "husky install",
+    "preview": "vite preview"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "browserslist": {
     "production": [
@@ -20,31 +49,40 @@
       "last 1 safari version"
     ]
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "@vitejs/plugin-react": "^4.0.4",
+    "cz-git": "^1.7.0",
+    "czg": "^1.7.0",
     "eslint": "^8.46.0",
     "eslint-config-alloy": "^5.1.0",
+    "eslint-formatter-pretty": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.0.0",
     "prettier-plugin-packagejson": "^2.4.5",
     "prettier-plugin-tailwindcss": "^0.4.1",
+    "rimraf": "^5.0.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.7"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "volta": {
+    "node": "18.17.0"
   }
 }
