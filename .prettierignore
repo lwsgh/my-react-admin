@@ -1,0 +1,15 @@
+node_modules
+dist
+public
+
+.eslintcache
+.stylelintcache
+.tsbuildinfo
+
+**/*.sh
+**/*.svg
+**/*.ejs
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
+CHANGELOG.md
